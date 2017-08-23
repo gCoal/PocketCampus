@@ -1,4 +1,4 @@
-package com.longrise.service;
+package com.google.service;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
