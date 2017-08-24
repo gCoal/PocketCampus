@@ -15,29 +15,15 @@ repositories {
 
 dependencies {
 
-//    compile group: 'com.longrise', name: 'JerseyAPI', version: '2.0.0'
-
-    //    Spring
-//    compile group: 'org.springframework', name: 'spring-context', version: '4.3.4.RELEASE'
+//    Spring
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.4.RELEASE'
     compile group: 'org.springframework', name: 'spring-core', version: '4.3.4.RELEASE'
     compile group: 'org.springframework', name: 'spring-beans', version: '4.3.4.RELEASE'
     compile group: 'org.springframework', name: 'spring-aop', version: '4.3.4.RELEASE'
     compile group: 'org.springframework', name: 'spring-web', version: '4.3.4.RELEASE'
-//    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.4.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.4.RELEASE'
+    compile group: 'org.springframework', name: 'spring-orm', version: '4.3.4.RELEASE'
 
-//    Jersey
-    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1-m09'
-    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.26-b09'
-    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.26-b09'
-    compile group: 'org.glassfish.jersey.core', name: 'jersey-common', version: '2.26-b09'
-    compile group: 'org.glassfish.jersey.inject', name: 'jersey-hk2', version: '2.26-b09'
-    compile group: 'org.glassfish.hk2.external', name: 'javax.inject', version: '2.5.0-b42'
-
-//    Jersey+Spring4
-    compile 'org.glassfish.jersey.ext:jersey-spring4:2.26-b09'
-//    compile ('org.glassfish.jersey.ext:jersey-spring4:2.26-b09'){
-//        exclude group: 'org.springframework', module: 'spring-context'
-//    }
 
 //    zookeeper
     compile 'org.apache.curator:curator-recipes:2.9.0'
@@ -50,6 +36,12 @@ dependencies {
 
 //    JSON
     compile 'net.sf.json-lib:json-lib:2.4:jdk15'
+
+//    jackson
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.8'
+    compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.13'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.6'
+
 
 //    http
     compile 'org.apache.httpcomponents:httpclient:4.5.2'
@@ -70,5 +62,6 @@ dependencies {
 //    hibernate
     compile 'org.hibernate:hibernate-core:5.2.9.Final'
 
+//    unit test
     testCompile 'junit:junit:4.12'
 }

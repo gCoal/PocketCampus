@@ -1,6 +1,8 @@
 package com.google.entity;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class Student {
     String id;
     String name;
