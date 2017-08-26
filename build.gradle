@@ -1,12 +1,17 @@
 group 'com.longrise'
 version '1.0'
-def artifactId = "GradleDemo"
+def artifactId = "Gradle-SpringBoot"
 
 apply plugin: 'java'
 apply plugin: 'war'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+war{
+    archiveName 'Gradle-SpringBoot.war'
+}
+
 
 repositories {
     mavenLocal()
@@ -15,15 +20,18 @@ repositories {
 
 dependencies {
 
-//    Spring
-    compile group: 'org.springframework', name: 'spring-context', version: '4.3.4.RELEASE'
-    compile group: 'org.springframework', name: 'spring-core', version: '4.3.4.RELEASE'
-    compile group: 'org.springframework', name: 'spring-beans', version: '4.3.4.RELEASE'
-    compile group: 'org.springframework', name: 'spring-aop', version: '4.3.4.RELEASE'
-    compile group: 'org.springframework', name: 'spring-web', version: '4.3.4.RELEASE'
-    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.4.RELEASE'
-    compile group: 'org.springframework', name: 'spring-orm', version: '4.3.4.RELEASE'
+//    Spring Boot
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.5.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.2.RELEASE'
 
+//    Spring Boot + jpa(hibernate)
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.2.RELEASE'
+
+//    Spring Boot + Jersey
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jersey', version: '1.5.2.RELEASE'
+
+//    JerseyAPI
+//    compile group: 'com.longrise',name: "JerseyAPI",version: '2.0.0'
 
 //    zookeeper
     compile 'org.apache.curator:curator-recipes:2.9.0'

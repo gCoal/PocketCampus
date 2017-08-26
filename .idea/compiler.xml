@@ -2,8 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="GradleDemo_main" target="1.8" />
-      <module name="GradleDemo_test" target="1.8" />
+      <module name="Gradle-SpringBoot_main" target="1.8" />
+      <module name="Gradle-SpringBoot_test" target="1.8" />
+      <module name="GradleSpringBoot_main" target="1.8" />
+      <module name="GradleSpringBoot_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
