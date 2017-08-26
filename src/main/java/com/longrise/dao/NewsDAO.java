@@ -19,10 +19,10 @@ import java.util.Map;
 public class NewsDAO {
 
     @Resource(name = "lupdp")
-    DruidDataSource lupdp;
+    private DruidDataSource lupdp;
 
     @Resource(name = "LSIP_train")
-    DruidDataSource LSIP_train;
+    private DruidDataSource LSIP_train;
 
     public List<Map<String,Object>> CommonSearch(String sql, Object[] objs) throws Exception{
         List<Map<String,Object>> result=null;

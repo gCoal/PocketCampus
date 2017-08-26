@@ -134,7 +134,9 @@ public class NewsLogic {
     }
 
 
-
+        public String Test(){
+            return "hello";
+        }
 
 
 

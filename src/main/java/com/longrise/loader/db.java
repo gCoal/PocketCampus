@@ -3,6 +3,7 @@ package com.longrise.loader;
 import com.alibaba.druid.filter.logging.Log4jFilter;
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.pool.DruidDataSource;
+import com.longrise.database.DbFactory;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -64,54 +65,42 @@ public class db {
 
     }
 
+
     @Bean(name = "lupdp")
     @Qualifier("lupdp")
-    public DruidDataSource lupdp() {
-        if(lupdp==null){
-            lupdp = new DruidDataSource();
-            lupdp.setDriverClassName(driver);
-            lupdp.setUrl("jdbc:postgresql://127.0.0.1:5432/LUPDP_TEST");
-            lupdp.setUsername(username);
-            lupdp.setPassword(password);
-            lupdp.setMaxActive(maxActive);
-            return lupdp;
-        }else {
-            return lupdp;
+    public DbFactory getLupdp() {
+        DbFactory dbFactory=new DbFactory();
+        dbFactory.setProject("lupdp");
+        dbFactory.setJerseyInitDB(getJerseyInitDB());
+        dbFactory.setLogFilter(LogFilter());
+        dbFactory.setStatFilter(StatFilter());
+        try {
+            dbFactory.create();
+            lupdp= dbFactory.getObject();
+            return dbFactory;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return null;
     }
 
     @Bean(name = "LSIP_train")
     @Qualifier("LSIP_train")
-    public DruidDataSource LSIP_train() {
-        if(LSIP_train==null){
-            LSIP_train = new DruidDataSource();
-            LSIP_train.setDriverClassName(driver);
-            LSIP_train.setUrl("jdbc:postgresql://127.0.0.1:5432/LSIPTEST_train");
-            LSIP_train.setUsername(username);
-            LSIP_train.setPassword(password);
-            LSIP_train.setMaxActive(maxActive);
-            return LSIP_train;
-        }else {
-            return LSIP_train;
+    public DbFactory getLSIP_train() {
+        DbFactory dbFactory=new DbFactory();
+        dbFactory.setProject("LSIP_train");
+        dbFactory.setJerseyInitDB(getJerseyInitDB());
+        dbFactory.setLogFilter(LogFilter());
+        dbFactory.setStatFilter(StatFilter());
+        try {
+            dbFactory.create();
+            LSIP_train=dbFactory.getObject();
+            return dbFactory;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return null;
     }
-
-//    @Bean(name = "lupdp")
-//    @Qualifier("lupdp")
-//    public DbFactory lupdp() {
-//        DbFactory dbFactory=new DbFactory();
-//        dbFactory.setProject("lupdp");
-//        dbFactory.setJerseyInitDB(getJerseyInitDB());
-//        dbFactory.setLogFilter(LogFilter());
-//        dbFactory.setStatFilter(StatFilter());
-//        try {
-//            dbFactory.create();
-//            return dbFactory;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 
     @Bean(name = "lupdpSF")
     @Primary
