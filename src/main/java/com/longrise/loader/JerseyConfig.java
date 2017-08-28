@@ -1,6 +1,5 @@
 package com.longrise.loader;
 
-//import com.longrise.jersey.JsonProvider;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 
