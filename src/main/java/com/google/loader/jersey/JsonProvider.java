@@ -1,4 +1,4 @@
-package com.longrise.loader;
+package com.google.loader.jersey;
 
 import net.sf.json.JSONObject;
 

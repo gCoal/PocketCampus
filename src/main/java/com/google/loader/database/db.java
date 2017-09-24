@@ -1,4 +1,4 @@
-package com.longrise.loader;
+package com.google.loader.database;
 
 import com.alibaba.druid.filter.logging.Log4jFilter;
 import com.alibaba.druid.filter.stat.StatFilter;

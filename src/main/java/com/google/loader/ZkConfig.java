@@ -1,4 +1,4 @@
-package com.longrise.loader;
+package com.google.loader;
 
 import com.longrise.interfaces.ZkConf;
 import org.springframework.stereotype.Component;

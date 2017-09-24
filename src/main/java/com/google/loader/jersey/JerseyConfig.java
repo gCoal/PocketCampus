@@ -1,4 +1,4 @@
-package com.longrise.loader;
+package com.google.loader.jersey;
 
 //import com.longrise.jersey.JsonProvider;
 import org.glassfish.jersey.server.ResourceConfig;

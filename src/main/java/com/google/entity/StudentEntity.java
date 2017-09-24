@@ -1,4 +1,4 @@
-package com.longrise.entity;
+package com.google.entity;
 
 import javax.persistence.*;
 

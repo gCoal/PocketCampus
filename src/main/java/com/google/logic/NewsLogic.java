@@ -1,8 +1,8 @@
-package com.longrise.logic;
+package com.google.logic;
 
-import com.longrise.dao.NewsDAO;
-import com.longrise.entity.LupdpmessageEntity;
-import com.longrise.entity.StudentEntity;
+import com.google.dao.NewsDAO;
+import com.google.entity.LupdpmessageEntity;
+import com.google.entity.StudentEntity;
 import net.sf.json.JSONObject;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

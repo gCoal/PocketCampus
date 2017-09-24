@@ -33,6 +33,15 @@ dependencies {
 //    JerseyAPI
     compile group: 'com.longrise',name: "JerseyAPI",version: '2.0.0'
 
+//    Spring session
+    compile group: 'org.springframework.session', name: 'spring-session', version: '1.3.1.RELEASE'
+
+//    Spring security
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.2.RELEASE'
+
+//    Spring redis
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-redis', version: '1.4.7.RELEASE'
+
 //    Zookeeper
     compile 'org.apache.curator:curator-recipes:2.9.0'
 

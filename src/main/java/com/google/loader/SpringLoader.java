@@ -1,4 +1,4 @@
-package com.longrise.loader;
+package com.google.loader;
 
 
 import org.springframework.boot.SpringApplication;

@@ -1,8 +1,8 @@
-package com.longrise.service;
+package com.google.service;
 
 import com.longrise.annotation.Register;
 import com.longrise.communicate.HttpType;
-import com.longrise.logic.NewsLogic;
+import com.google.logic.NewsLogic;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;
 
