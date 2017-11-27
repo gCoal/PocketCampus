@@ -1,17 +1,16 @@
-group 'com.longrise'
-version '1.0'
-def artifactId = "Gradle-SpringBoot"
+plugins {
+    id 'java'
+    id 'idea'
+    id 'application'
+    id 'org.springframework.boot' version '1.5.6.RELEASE'
+}
 
-apply plugin: 'java'
-apply plugin: 'war'
+group 'com.google'
+version '1.0'
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-
-war{
-    archiveName 'Gradle-SpringBoot.war'
-}
-
 
 repositories {
     mavenLocal()
@@ -19,37 +18,24 @@ repositories {
 }
 
 dependencies {
-
 //    Spring Boot
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.5.2.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.2.RELEASE'
-
-//    Spring Boot + jpa(hibernate)
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.2.RELEASE'
-
-//    Spring Boot + Jersey
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jersey', version: '1.5.2.RELEASE'
-
-//    JerseyAPI
-    compile group: 'com.longrise',name: "JerseyAPI",version: '2.0.0'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.5.6.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.6.RELEASE'
 
 //    Spring session
-    compile group: 'org.springframework.session', name: 'spring-session', version: '1.3.1.RELEASE'
-
-//    Spring security
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.2.RELEASE'
+//    compile group: 'org.springframework.session', name: 'spring-session', version: '1.3.1.RELEASE'
 
 //    Spring redis
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-redis', version: '1.4.7.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '1.5.6.RELEASE'
 
-//    Zookeeper
-    compile 'org.apache.curator:curator-recipes:2.9.0'
+//    Spring data-jpa
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.6.RELEASE'
 
-//    servlet
-    compile 'javax.servlet:javax.servlet-api:4.0.0-b01'
+//    jetty
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jetty', version: '1.5.6.RELEASE'
 
-//    DBUtil
-    compile 'commons-dbutils:commons-dbutils:1.6'
+//    MongoDB
+    compile group: 'org.springframework.data', name: 'spring-data-mongodb', version: '1.10.7.RELEASE'
 
 //    JSON
     compile 'net.sf.json-lib:json-lib:2.4:jdk15'
@@ -59,26 +45,13 @@ dependencies {
     compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.13'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.6'
 
-
 //    http
-    compile 'org.apache.httpcomponents:httpclient:4.5.2'
-
-//    xml
-    compile 'dom4j:dom4j:1.6.1'
-    compile 'org.jdom:jdom:2.0.0'
-
-//    redis
-    compile 'redis.clients:jedis:2.9.0'
-
-//    druid pool
-    compile 'com.alibaba:druid:1.1.2'
-
-//    postgresql
-    compile 'org.postgresql:postgresql:9.4.1210.jre7'
-
-//    hibernate
-    compile 'org.hibernate:hibernate-core:5.2.9.Final'
+    compile group: 'org.apache.httpcomponents', name: 'httpasyncclient', version: '4.1.2'
 
 //    unit test
     testCompile 'junit:junit:4.12'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
 }
